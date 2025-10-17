@@ -2,7 +2,8 @@ import pandas as pd
 import numpy as np
 
 # read csv file
-gamesData = pd.read_csv("games_march2025_full.csv")
+gamesData = pd.read_csv("games_march2025_full.csv", 
+                        engine = 'python') # helps with crashes
 # show all columns
 pd.set_option('display.max_columns', None) 
 # getting rid of any duplicate rows
@@ -29,3 +30,4 @@ gamesData["tags"] = gamesData["tags"].str.rstrip()
 # convert column to string
 gamesData["tags"] = gamesData["tags"].astype("string")
 print(gamesData["tags"].head())
+print("Hello WOrld !")
